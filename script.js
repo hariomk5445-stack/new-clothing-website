@@ -51,7 +51,7 @@ const productsData = {
     }
 };
 
-// Automatic Product Loader (HTML ko ab chune ki zaroorat nahi)
+// Automatic Product Loader with Safe Click Events
 function loadProducts() {
     const festiveSlider = document.getElementById('festive-slider');
     const stylishSlider = document.getElementById('stylish-slider');
@@ -62,34 +62,41 @@ function loadProducts() {
     stylishSlider.innerHTML = '';
 
     for (let id in productsData) {
-        if (id === 'banner-special') continue; // Banner ko skip karein
+        if (id === 'banner-special') continue;
 
         const p = productsData[id];
-        const cardHTML = `
-            <div class="product-card" onclick="showDetail('${id}')">
-                <span class="badge">${p.badge}</span>
-                <div class="card-img-wrapper">
-                    <img src="${p.image}" alt="${p.title}">
-                </div>
-                <div class="card-body">
-                    <h3>${p.title}</h3>
-                    <div class="price-row">
-                        <span class="current-price">${p.price}</span>
-                        <span class="original-price">${p.original}</span>
-                    </div>
+        
+        // Card element create kar rahe hain
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <span class="badge">${p.badge}</span>
+            <div class="card-img-wrapper">
+                <img src="${p.image}" alt="${p.title}">
+            </div>
+            <div class="card-body">
+                <h3>${p.title}</h3>
+                <div class="price-row">
+                    <span class="current-price">${p.price}</span>
+                    <span class="original-price">${p.original}</span>
                 </div>
             </div>
         `;
 
+        // Yahan direct click event laga rahe hain (Yeh kabhi fail nahi hota)
+        card.addEventListener('click', function() {
+            showDetail(id);
+        });
+
         if (p.category === 'festive') {
-            festiveSlider.innerHTML += cardHTML;
+            festiveSlider.appendChild(card);
         } else if (p.category === 'stylish') {
-            stylishSlider.innerHTML += cardHTML;
+            stylishSlider.appendChild(card);
         }
     }
 }
 
-// Page load hote hi products automatically dikhane ke liye
+// Page load par run karne ke liye
 window.onload = loadProducts;
 
 function showDetail(productId) {
