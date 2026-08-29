@@ -1,5 +1,14 @@
 // Product Database with Affiliate Links
 const productsData = {
+    "banner-special": {
+        title: "Exclusive Designer Festive Kurti Combo (Special Offer)",
+        price: "₹1,099",
+        original: "₹2,199",
+        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80", // Yahan aap banner ke liye koi bhi doosri image ka link daal sakte hain
+        badge: "MEGA DEAL",
+        desc: "Yeh hamara special featured collection hai jo sirf banner par click karne par milta hai. Premium quality, heavy embroidery, aur limited stock available!",
+        link: "https://www.amazon.in/your-affiliate-id" // <-- Yahan apna special affiliate link daalein
+    },
     "kurti-1": {
         title: "Embroidered Anarkali Kurti Set with Dupatta",
         price: "₹799",
