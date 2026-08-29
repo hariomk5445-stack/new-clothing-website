@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChicVogue - Trendy Fashion Finds</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="logo">Chic<span>Vogue</span></div>
+        <div class="search-icon"><i class="fa-regular fa-heart"></i></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="app-container">
+        
+        <!-- HOME VIEW: Horizontal Sliders (Sets) -->
+        <div id="home-view" class="view active">
+            <!-- Hero Banner -->
+            <section class="hero-banner">
+                <div class="hero-text">
+                    <h1>Trendiest Kurti Sets</h1>
+                    <p>Handpicked styles for your daily elegance</p>
+                </div>
+            </section>
+
+            <!-- Set 1: Kurti Sets -->
+            <section class="product-set">
+                <div class="set-header">
+                    <h2>Stylish Kurti Sets</h2>
+                    <span class="see-all">Swipe <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <div class="horizontal-slider">
+                    <!-- Product Card 1 -->
+                    <div class="product-card" onclick="showDetail('kurti-1')">
+                        <div class="badge">20% OFF</div>
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="Kurti Set">
+                        </div>
+                        <div class="card-body">
+                            <h3>Embroidered Anarkali Kurti Set</h3>
+                            <div class="price-row">
+                                <span class="current-price">₹799</span>
+                                <span class="original-price">₹1,299</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card" onclick="showDetail('kurti-2')">
+                        <div class="badge sale">SALE</div>
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" alt="Kurti Set">
+                        </div>
+                        <div class="card-body">
+                            <h3>Printed Cotton Straight Kurti</h3>
+                            <div class="price-row">
+                                <span class="current-price">₹499</span>
+                                <span class="original-price">₹999</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card" onclick="showDetail('kurti-3')">
+                        <div class="badge">NEW</div>
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=500&q=80" alt="Kurti Set">
+                        </div>
+                        <div class="card-body">
+                            <h3>Designer Party Wear Kurti</h3>
+                            <div class="price-row">
+                                <span class="current-price">₹999</span>
+                                <span class="original-price">₹1,599</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-card" onclick="showDetail('kurti-4')">
+                        <div class="badge">HOT</div>
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=500&q=80" alt="Kurti Set">
+                        </div>
+                        <div class="card-body">
+                            <h3>Jaipuri Block Print Kurta Set</h3>
+                            <div class="price-row">
+                                <span class="current-price">₹649</span>
+                                <span class="original-price">₹1,199</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Set 2: Festive & Ethnic Wear -->
+            <section class="product-set">
+                <div class="set-header">
+                    <h2>Festive Special Sets</h2>
+                    <span class="see-all">Swipe <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <div class="horizontal-slider">
+                    <!-- Product Card 5 -->
+                    <div class="product-card" onclick="showDetail('kurti-5')">
+                        <div class="badge">TRENDING</div>
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80" alt="Ethnic Set">
+                        </div>
+                        <div class="card-body">
+                            <h3>Silk Blend Festive Kurta Set</h3>
+                            <div class="price-row">
+                                <span class="current-price">₹1,299</span>
+                                <span class="original-price">₹2,499</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="product-card" onclick="showDetail('kurti-6')">
+                        <div class="badge">15% OFF</div>
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=80" alt="Ethnic Set">
+                        </div>
+                        <div class="card-body">
+                            <h3>Gota Work Kurti with Palazzo</h3>
+                            <div class="price-row">
+                                <span class="current-price">₹899</span>
+                                <span class="original-price">₹1,499</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- DETAIL VIEW (Hidden by default) -->
+        <div id="detail-view" class="view">
+            <button class="back-btn" onclick="showHome()"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            
+            <div class="detail-container">
+                <div class="detail-img-box">
+                    <img id="detail-img" src="" alt="Product Image">
+                </div>
+                <div class="detail-content">
+                    <span id="detail-badge" class="detail-badge">In Stock</span>
+                    <h1 id="detail-title">Product Title</h1>
+                    <div class="detail-price-box">
+                        <span id="detail-price" class="current-price">₹799</span>
+                        <span id="detail-original" class="original-price">₹1,299</span>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <h3>Product Details</h3>
+                    <p id="detail-desc">Experience ultimate comfort and elegance with this premium quality outfit. Perfect for casual outings, office wear, or festive occasions. Made with breathable fabric ensuring soft touch on skin.</p>
+                    
+                    <div class="features-list">
+                        <div><i class="fa-solid fa-check"></i> 100% Original Quality</div>
+                        <div><i class="fa-solid fa-check"></i> Easy Returns Available</div>
+                        <div><i class="fa-solid fa-check"></i> Verified Best Seller</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Bottom Buy Bar -->
+            <div class="sticky-buy-bar">
+                <div class="price-mini">
+                    <small>Total Price</small>
+                    <span id="sticky-price">₹799</span>
+                </div>
+                <a id="buy-now-btn" href="#" target="_blank" class="buy-btn">
+                    <i class="fa-solid fa-bag-shopping"></i> Buy on Amazon / Flipkart
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ChicVogue. Curated Affiliate Store.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+[cite: 3]
