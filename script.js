@@ -27,6 +27,15 @@ const productsData = {
         desc: "Breathable pure cotton straight-cut kurti featuring vibrant block prints. Ideal for daily college or office wear during summer seasons.",
         link: "https://www.flipkart.com/your-affiliate-id"
     },
+     "kurti-7": {
+        title: "Printed Cotton Straight Kurti for Women",
+        price: "₹499",
+        original: "₹999",
+        image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80",
+        badge: "SALE",
+        desc: "Breathable pure cotton straight-cut kurti featuring vibrant block prints. Ideal for daily college or office wear during summer seasons.",
+        link: "https://www.flipkart.com/your-affiliate-id"
+    },
     "kurti-3": {
         title: "Designer Party Wear Georgette Kurti",
         price: "₹999",
