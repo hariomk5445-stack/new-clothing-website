@@ -91,6 +91,9 @@ function showDetail(productId) {
     document.getElementById('home-view').classList.remove('active');
     document.getElementById('detail-view').classList.add('active');
     
+    // --- YE NAYA CODE HAI (Browser History me state add karega) ---
+    window.history.pushState({view: 'detail', id: productId}, "", "#" + productId);
+    
     // Scroll to top
     window.scrollTo(0, 0);
 }
@@ -100,3 +103,10 @@ function showHome() {
     document.getElementById('home-view').classList.add('active');
     window.scrollTo(0, 0);
 }
+
+// --- YE NAYA CODE HAI (Phone ka back button handle karega) ---
+window.addEventListener('popstate', function(event) {
+    // Jab user phone ka back button dabayega, yeh automatically home view par le aayega
+    document.getElementById('detail-view').classList.remove('active');
+    document.getElementById('home-view').classList.add('active');
+});
