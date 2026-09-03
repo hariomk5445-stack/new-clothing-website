@@ -62,7 +62,7 @@ const productsData = {
     original: "₹XXX",
     image: "yahan image ka URL daalo",
     badge: "NEW",
-    category: "stylish",
+    category: "Casual",
     desc: "Yahan product ka short description likho.",
     link: "yahan affiliate link daalo"
 }
