@@ -55,7 +55,17 @@ const productsData = {
         category: "festive",
         desc: "Gorgeous set combining a chic short kurti paired with wide-leg comfortable palazzos.",
         link: "https://www.amazon.in/your-affiliate-id"
-    }
+    },
+    "kurti-7": {
+    title: "Yahan Product Ka Naam Likho",
+    price: "₹XXX",
+    original: "₹XXX",
+    image: "yahan image ka URL daalo",
+    badge: "NEW",
+    category: "stylish",
+    desc: "Yahan product ka short description likho.",
+    link: "yahan affiliate link daalo"
+}
 
     // 👇 Yahan copy-paste karke naya product add karte jao:
     // "unique-id": {
