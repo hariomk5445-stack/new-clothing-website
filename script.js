@@ -91,7 +91,17 @@ const categoryLabels = {
 // ⚙️ AUTOMATIC RENDERING ENGINE — isse neeche kuch bhi touch mat karna.
 // ==========================================================
 
-document.addEventListener("DOMContentLoaded", loadProducts);
+document.addEventListener("DOMContentLoaded", () => {
+    loadProducts();
+    checkUrlForProduct();
+});
+
+function checkUrlForProduct() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && productsData[hash]) {
+        showDetail(hash);
+    }
+}
 
 function loadProducts() {
     const container = document.getElementById("sections-container");
@@ -178,8 +188,12 @@ function showHome() {
     document.getElementById('home-view').classList.add('active');
     window.scrollTo(0, 0);
 }
-
 window.addEventListener('popstate', function(event) {
-    document.getElementById('detail-view').classList.remove('active');
-    document.getElementById('home-view').classList.add('active');
+    const hash = window.location.hash.replace('#', '');
+    if (hash && productsData[hash]) {
+        showDetail(hash);
+    } else {
+        document.getElementById('detail-view').classList.remove('active');
+        document.getElementById('home-view').classList.add('active');
+    }
 });
