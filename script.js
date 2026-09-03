@@ -1,4 +1,10 @@
-// Product Database - Naya product add karne ke liye bas yahan data dalein
+// ==========================================================
+// 🟢 PRODUCT DATABASE — Naya product add/edit/delete SIRF yahan karo.
+// Naya category chahiye? Bas "category" me naya naam likh do
+// (jaise "winter", "ethnic") — uska section apne aap ban jaayega.
+// Neeche wala code kabhi touch mat karna.
+// ==========================================================
+
 const productsData = {
     "banner-special": {
         title: "Exclusive Designer Festive Kurti Combo (Special Offer)",
@@ -8,6 +14,7 @@ const productsData = {
         badge: "MEGA DEAL",
         desc: "Yeh hamara special featured collection hai jo sirf banner par click karne par milta hai. Premium quality, heavy embroidery, aur limited stock available!",
         link: "https://www.amazon.in/your-affiliate-id"
+        // Note: banner-special ko "category" mat do — ye kisi slider me nahi dikhta
     },
     "kurti-1": {
         title: "Embroidered Anarkali Kurti Set with Dupatta",
@@ -49,52 +56,93 @@ const productsData = {
         desc: "Gorgeous set combining a chic short kurti paired with wide-leg comfortable palazzos.",
         link: "https://www.amazon.in/your-affiliate-id"
     }
+
+    // 👇 Yahan copy-paste karke naya product add karte jao:
+    // "unique-id": {
+    //     title: "Product Name",
+    //     price: "₹XXX",
+    //     original: "₹XXX",
+    //     image: "image-url",
+    //     badge: "SALE",
+    //     category: "koi-bhi-naam",   // naya bhi chalega!
+    //     desc: "Description",
+    //     link: "affiliate-link"
+    // }
 };
 
-// Function to load products dynamically
+// Optional: category ka pretty display title. Naam nahi doge to
+// automatically "Category Collection" jaisa title ban jaayega.
+const categoryLabels = {
+    festive: "Festive Special Sets",
+    stylish: "Stylish Kurti Sets"
+};
+
+// ==========================================================
+// ⚙️ AUTOMATIC RENDERING ENGINE — isse neeche kuch bhi touch mat karna.
+// ==========================================================
+
+document.addEventListener("DOMContentLoaded", loadProducts);
+
 function loadProducts() {
-    const festiveSlider = document.getElementById('festive-slider');
-    const stylishSlider = document.getElementById('stylish-slider');
-    
-    if (!festiveSlider || !stylishSlider) return;
+    const container = document.getElementById("sections-container");
+    if (!container) return;
 
-    festiveSlider.innerHTML = '';
-    stylishSlider.innerHTML = '';
+    container.innerHTML = "";
 
+    const grouped = {};
     for (let id in productsData) {
-        if (id === 'banner-special') continue;
-
         const p = productsData[id];
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <span class="badge">${p.badge}</span>
-            <div class="card-img-wrapper">
-                <img src="${p.image}" alt="${p.title}">
-            </div>
-            <div class="card-body">
-                <h3>${p.title}</h3>
-                <div class="price-row">
-                    <span class="current-price">${p.price}</span>
-                    <span class="original-price">${p.original}</span>
-                </div>
-            </div>
-        `;
-
-        card.addEventListener('click', function() {
-            showDetail(id);
-        });
-
-        if (p.category === 'festive') {
-            festiveSlider.appendChild(card);
-        } else if (p.category === 'stylish') {
-            stylishSlider.appendChild(card);
-        }
+        if (!p.category) continue; // banner-special jaise no-category items skip
+        if (!grouped[p.category]) grouped[p.category] = [];
+        grouped[p.category].push({ id, ...p });
     }
+
+    Object.keys(grouped).forEach(category => {
+        const sectionTitle = categoryLabels[category] || autoTitle(category);
+        const sliderId = `${category}-slider`;
+
+        const section = document.createElement("section");
+        section.className = "product-set";
+        section.innerHTML = `
+            <div class="set-header">
+                <h2>${sectionTitle}</h2>
+                <span class="see-all">Swipe &rarr;</span>
+            </div>
+            <div class="horizontal-slider" id="${sliderId}"></div>
+        `;
+        container.appendChild(section);
+
+        const slider = section.querySelector(`#${sliderId}`);
+        grouped[category].forEach(p => {
+            slider.appendChild(createCard(p));
+        });
+    });
 }
 
-// Run on page load safely
-document.addEventListener("DOMContentLoaded", loadProducts);
+function autoTitle(category) {
+    const formatted = category.charAt(0).toUpperCase() + category.slice(1);
+    return `${formatted} Collection`;
+}
+
+function createCard(p) {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+        <span class="badge">${p.badge || ""}</span>
+        <div class="card-img-wrapper">
+            <img src="${p.image}" alt="${p.title}">
+        </div>
+        <div class="card-body">
+            <h3>${p.title}</h3>
+            <div class="price-row">
+                <span class="current-price">${p.price}</span>
+                <span class="original-price">${p.original}</span>
+            </div>
+        </div>
+    `;
+    card.addEventListener("click", () => showDetail(p.id));
+    return card;
+}
 
 function showDetail(productId) {
     const product = productsData[productId];
@@ -110,7 +158,7 @@ function showDetail(productId) {
 
     document.getElementById('home-view').classList.remove('active');
     document.getElementById('detail-view').classList.add('active');
-    
+
     window.history.pushState({view: 'detail', id: productId}, "", "#" + productId);
     window.scrollTo(0, 0);
 }
