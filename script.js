@@ -26,6 +26,16 @@ const productsData = {
         desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail",
         link: "https://link.amazon/B09M3TI1v"
     },
+        "kurti-189": {
+        title: "Square Neck Long Sleeve Women Dress",
+        price: "₹599",
+        original: "₹1199",
+        image: "https://i.postimg.cc/3wwh9Jnb/Chat-GPT-Image-Sep-4-2026-09-17-45-PM.png",
+        badge: "SALE",
+        category: "stylish",
+        desc: "Elegant Square Neck Design – Stylish A-line midi dress for women with a flattering square neckline and long sleeves, perfect for all seasons.",
+        link: "https://link.amazon/B036ck1LU"
+    },
     "kurti-5": {
         title: "Silk Blend Festive Kurta Set with Embroidery",
         price: "₹1,299",
