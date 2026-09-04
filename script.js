@@ -181,12 +181,29 @@ function showDetail(productId) {
 
     window.history.pushState({view: 'detail', id: productId}, "", "#" + productId);
     window.scrollTo(0, 0);
+    loadRelatedProducts(productId, product.category); 
+}
+function loadRelatedProducts(currentId, category) {
+    const relatedSlider = document.getElementById('related-slider');
+    if (!relatedSlider) return;
+
+    relatedSlider.innerHTML = '';
+
+    for (let id in productsData) {
+        const p = productsData[id];
+        if (id === currentId) continue;       // khud ko skip karo
+        if (p.category !== category) continue; // sirf same category
+
+        const card = createCard({ id, ...p });
+        relatedSlider.appendChild(card);
+    }
 }
 
 function showHome() {
     document.getElementById('detail-view').classList.remove('active');
     document.getElementById('home-view').classList.add('active');
     window.scrollTo(0, 0);
+    window.history.pushState({view: 'home'}, "", window.location.pathname);
 }
 window.addEventListener('popstate', function(event) {
     const hash = window.location.hash.replace('#', '');
