@@ -95,9 +95,9 @@ const productsData = {
         category: "festive",
         desc: "Gorgeous set combining a chic short kurti paired with wide-leg comfortable palazzos.",
         link: "https://www.amazon.in/your-affiliate-id"
-    },
+    }
    
-}
+};
 
     // 👇 Yahan copy-paste karke naya product add karte jao:
     // "unique-id": {
@@ -110,7 +110,6 @@ const productsData = {
     //     desc: "Description",
     //     link: "affiliate-link"
     // }
-};
 
 // Optional: category ka pretty display title. Naam nahi doge to
 // automatically "Category Collection" jaisa title ban jaayega.
