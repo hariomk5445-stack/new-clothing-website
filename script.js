@@ -20,7 +20,7 @@ const productsData = {
         title: "v-neck maxi dress For Womens | Party Outfit",
         price: "₹499",
         original: "₹1,199",
-        image: "https://ibb.co/kgCD5Lgw",
+        image: "https://kommodo.ai/i/lQKwNBxUp8I4chMPRqxj",
         badge: "60% OFF",
         category: "stylish",
         desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail",
