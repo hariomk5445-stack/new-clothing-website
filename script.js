@@ -23,7 +23,7 @@ const productsData = {
         image: "https://kommodo.ai/i/lQKwNBxUp8I4chMPRqxj",
         badge: "60% OFF",
         category: "stylish",
-        desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail",
+        desc: "https://i.postimg.cc/nVS6GXTm/Chat-GPT-Image-Sep-4-2026-04-19-45-PM.png",
         link: "https://link.amazon/B09M3TI1v"
     },
     "kurti-2": {
