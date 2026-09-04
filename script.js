@@ -26,7 +26,7 @@ const productsData = {
         desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail",
         link: "https://link.amazon/B09M3TI1v"
     },
-        "kurti-189": {
+        "kurti-188": {
         title: "Square Neck Long Sleeve Women Dress",
         price: "₹599",
         original: "₹1199",
@@ -36,7 +36,7 @@ const productsData = {
         desc: "Elegant Square Neck Design – Stylish A-line midi dress for women with a flattering square neckline and long sleeves, perfect for all seasons.",
         link: "https://link.amazon/B036ck1LU"
     },
-        "kurti-189": {
+        "kurti-185": {
         title: "Girl's & Women's Solid Color V-Neck A-Line Maxi Dress for Women",
         price: "₹449",
         original: "₹1299",
@@ -46,7 +46,7 @@ const productsData = {
         desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail, crafted in a flattering A-line silhouette that extends to mid-calf length",
         link: "https://link.amazon/B0domP47n"
     },
-        "kurti-189": {
+        "kurti-179": {
         title: "Casual Sleeveless Summer Dresses for Beach & Stylish Party Outifits",
         price: "₹499",
         original: "₹1199",
