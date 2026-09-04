@@ -36,6 +36,46 @@ const productsData = {
         desc: "Elegant Square Neck Design – Stylish A-line midi dress for women with a flattering square neckline and long sleeves, perfect for all seasons.",
         link: "https://link.amazon/B036ck1LU"
     },
+        "kurti-189": {
+        title: "Girl's & Women's Solid Color V-Neck A-Line Maxi Dress for Women",
+        price: "₹449",
+        original: "₹1299",
+        image: "https://i.postimg.cc/xC1M5Hzq/Chat-GPT-Image-Sep-4-2026-11-08-29-PM.png",
+        badge: "NEW",
+        category: "stylish",
+        desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail, crafted in a flattering A-line silhouette that extends to mid-calf length",
+        link: "https://link.amazon/B0domP47n"
+    },
+        "kurti-189": {
+        title: "Casual Sleeveless Summer Dresses for Beach & Stylish Party Outifits",
+        price: "₹499",
+        original: "₹1199",
+        image: "https://i.postimg.cc/g2ygBVnv/Chat-GPT-Image-Sep-4-2026-11-19-57-PM.png",
+        badge: "58% OFF",
+        category: "stylish",
+        desc: "EFFORTLESS STYLE BY Leriya Fashion: Modern prints, solid tones and western cuts make this party wear dress for women stylish enough for dinners, brunches and celebrations.",
+        link: "https://link.amazon/B000zsxLu"
+    },
+        "kurti-654": {
+        title: "Women's Striped Sleeveless Midi Dress | Mandarin Collar | Button Placket |",
+        price: "₹599",
+        original: "₹1599",
+        image: "https://i.postimg.cc/nhwGW3n6/Chat-GPT-Image-Sep-4-2026-11-25-07-PM.png",
+        badge: "SALE",
+        category: "stylish",
+        desc: "Premium Fabric: Made from lightweight, breathable fabric for superior comfort throughout the day.",
+        link: "https://link.amazon/B05UyZnYp"
+    },
+        "kurti-654": {
+        title: "Beautiful Women Top | Regular Wear Tops For Women",
+        price: "₹299",
+        original: "₹1099",
+        image: "https://i.postimg.cc/W1r4R3Vc/Chat-GPT-Image-Sep-4-2026-11-29-40-PM.png",
+        badge: "SALE",
+        category: "regular",
+        desc: "Sexy and elegant off shoulder top with long tiered sleeves",
+        link: "https://link.amazon/B0d0RsngY"
+    },
     "kurti-5": {
         title: "Silk Blend Festive Kurta Set with Embroidery",
         price: "₹1,299",
@@ -56,15 +96,7 @@ const productsData = {
         desc: "Gorgeous set combining a chic short kurti paired with wide-leg comfortable palazzos.",
         link: "https://www.amazon.in/your-affiliate-id"
     },
-    "kurti-7": {
-    title: "Yahan Product Ka Naam Likho",
-    price: "₹XXX",
-    original: "₹XXX",
-    image: "yahan image ka URL daalo",
-    badge: "NEW",
-    category: "Casual",
-    desc: "Yahan product ka short description likho.",
-    link: "yahan affiliate link daalo"
+   
 }
 
     // 👇 Yahan copy-paste karke naya product add karte jao:
@@ -84,7 +116,8 @@ const productsData = {
 // automatically "Category Collection" jaisa title ban jaayega.
 const categoryLabels = {
     festive: "Festive Special Sets",
-    stylish: "Stylish Kurti Sets"
+    stylish: "Stylish Kurti Sets",
+    regular: "Womens Regular Sets"
 };
 
 // ==========================================================
