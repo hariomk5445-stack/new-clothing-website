@@ -17,14 +17,14 @@ const productsData = {
         // Note: banner-special ko "category" mat do — ye kisi slider me nahi dikhta
     },
     "kurti-1": {
-        title: "Embroidered Anarkali Kurti Set with Dupatta",
-        price: "₹799",
-        original: "₹1,299",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80",
-        badge: "20% OFF",
+        title: "v-neck maxi dress For Womens | Party Outfit",
+        price: "₹499",
+        original: "₹1,199",
+        image: "https://chatgpt.com/backend-api/estuary/content?id=file_0000000091a08211952f305d76d75322&ts=496810&p=fs&cid=1&sig=a85e91d36b8482b5a166a03b51f15cb09cc0bb220e63cfc2eae0504399db1e99&v=0",
+        badge: "60% OFF",
         category: "stylish",
-        desc: "Exquisite embroidered Anarkali kurti set crafted from soft rayon fabric.",
-        link: "https://www.amazon.in/your-affiliate-id"
+        desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail",
+        link: "https://link.amazon/B09M3TI1v"
     },
     "kurti-2": {
         title: "Printed Cotton Straight Kurti for Women",
