@@ -180,8 +180,9 @@ function createCard(p) {
     const card = document.createElement("div");
     card.className = "product-card";
     card.innerHTML = `
-        <span class="badge">${p.badge || ""}</span>
         <div class="card-img-wrapper">
+            <div class="img-bg" style="background-image:url('${p.image}')"></div>
+            <span class="badge">${p.badge || ""}</span>
             <img src="${p.image}" alt="${p.title}">
         </div>
         <div class="card-body">
@@ -199,7 +200,8 @@ function createCard(p) {
 function showDetail(productId) {
     const product = productsData[productId];
     if (!product) return;
-
+    
+    document.getElementById('detail-img-bg').style.backgroundImage = `url('${product.image}')`; 
     document.getElementById('detail-img').src = product.image;
     document.getElementById('detail-title').innerText = product.title;
     document.getElementById('detail-price').innerText = product.price;
