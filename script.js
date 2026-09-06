@@ -70,7 +70,7 @@ const productsData = {
         title: "Beautiful Women Top | Regular Wear Tops For Women",
         price: "₹299",
         original: "₹1099",
-        image: "https://i.postimg.cc/W1r4R3Vc/Chat-GPT-Image-Sep-4-2026-11-29-40-PM.png",
+        image: "https://i.postimg.cc/Px9xcD80/Chat-GPT-Image-Sep-6-2026-12-30-30-PM.png",
         badge: "SALE",
         category: "regular",
         desc: "Sexy and elegant off shoulder top with long tiered sleeves",
