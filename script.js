@@ -1,138 +1,54 @@
 // ==========================================================
-// 🟢 PRODUCT DATABASE — Naya product add/edit/delete SIRF yahan karo.
-// Naya category chahiye? Bas "category" me naya naam likh do
-// (jaise "winter", "ethnic") — uska section apne aap ban jaayega.
-// Neeche wala code kabhi touch mat karna.
+// 🟢 SIRF EK JAGAH — apna Google Sheet CSV link yahan daalo
 // ==========================================================
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQPVV5jDysJKU4ZcvoEBHDggB_5eeeGnJLnlFGOFdy5iHDY65KwbCPmZg4FEVk_43JCVuidorw3Fgpg/pub?output=csv";
 
-const productsData = {
-    "banner-special": {
-        title: "Exclusive Designer Festive Kurti Combo (Special Offer)",
-        price: "₹1,099",
-        original: "₹2,199",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80",
-        badge: "MEGA DEAL",
-        desc: "Yeh hamara special featured collection hai jo sirf banner par click karne par milta hai. Premium quality, heavy embroidery, aur limited stock available!",
-        link: "https://www.amazon.in/your-affiliate-id"
-        // Note: banner-special ko "category" mat do — ye kisi slider me nahi dikhta
-    },
-    "kurti-1": {
-        title: "v-neck maxi dress For Womens | Party Outfit",
-        price: "₹499",
-        original: "₹1,199",
-        image: "https://i.postimg.cc/nVS6GXTm/Chat-GPT-Image-Sep-4-2026-04-19-45-PM.png",
-        badge: "60% OFF",
-        category: "stylish",
-        desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail",
-        link: "https://link.amazon/B09M3TI1v"
-    },
-        "kurti-188": {
-        title: "Square Neck Long Sleeve Women Dress",
-        price: "₹599",
-        original: "₹1199",
-        image: "https://i.postimg.cc/3wwh9Jnb/Chat-GPT-Image-Sep-4-2026-09-17-45-PM.png",
-        badge: "SALE",
-        category: "stylish",
-        desc: "Elegant Square Neck Design – Stylish A-line midi dress for women with a flattering square neckline and long sleeves, perfect for all seasons.",
-        link: "https://link.amazon/B036ck1LU"
-    },
-        "kurti-185": {
-        title: "Girl's & Women's Solid Color V-Neck A-Line Maxi Dress for Women",
-        price: "₹449",
-        original: "₹1299",
-        image: "https://i.postimg.cc/xC1M5Hzq/Chat-GPT-Image-Sep-4-2026-11-08-29-PM.png",
-        badge: "NEW",
-        category: "stylish",
-        desc: "ELEGANT DESIGN: V-neck maxi dress featuring puff sleeves and cinched waist detail, crafted in a flattering A-line silhouette that extends to mid-calf length",
-        link: "https://link.amazon/B0domP47n"
-    },
-        "kurti-179": {
-        title: "Casual Sleeveless Summer Dresses for Beach & Stylish Party Outifits",
-        price: "₹499",
-        original: "₹1199",
-        image: "https://i.postimg.cc/g2ygBVnv/Chat-GPT-Image-Sep-4-2026-11-19-57-PM.png",
-        badge: "58% OFF",
-        category: "stylish",
-        desc: "EFFORTLESS STYLE BY Leriya Fashion: Modern prints, solid tones and western cuts make this party wear dress for women stylish enough for dinners, brunches and celebrations.",
-        link: "https://link.amazon/B000zsxLu"
-    },
-        "kurti-654": {
-        title: "Women's Striped Sleeveless Midi Dress | Mandarin Collar | Button Placket |",
-        price: "₹599",
-        original: "₹1599",
-        image: "https://i.postimg.cc/nhwGW3n6/Chat-GPT-Image-Sep-4-2026-11-25-07-PM.png",
-        badge: "SALE",
-        category: "stylish",
-        desc: "Premium Fabric: Made from lightweight, breathable fabric for superior comfort throughout the day.",
-        link: "https://link.amazon/B05UyZnYp"
-    },
-        "kurti-654": {
-        title: "Beautiful Women Top | Regular Wear Tops For Women",
-        price: "₹299",
-        original: "₹1099",
-        image: "https://i.postimg.cc/Px9xcD80/Chat-GPT-Image-Sep-6-2026-12-30-30-PM.png",
-        badge: "SALE",
-        category: "regular",
-        desc: "Sexy and elegant off shoulder top with long tiered sleeves",
-        link: "https://link.amazon/B0d0RsngY"
-    },
-    "kurti-5": {
-        title: "Silk Blend Festive Kurta Set with Embroidery",
-        price: "₹1,299",
-        original: "₹2,499",
-        image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80",
-        badge: "TRENDING",
-        category: "festive",
-        desc: "Premium silk blend festive collection. Royal look with intricate golden zari work.",
-        link: "https://www.flipkart.com/your-affiliate-id"
-    },
-    "kurti-6": {
-        title: "Gota Work Kurti with Designer Palazzo",
-        price: "₹899",
-        original: "₹1,499",
-        image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=80",
-        badge: "15% OFF",
-        category: "festive",
-        desc: "Gorgeous set combining a chic short kurti paired with wide-leg comfortable palazzos.",
-        link: "https://www.amazon.in/your-affiliate-id"
-    }
-   
-};
+let productsData = {};
 
-    // 👇 Yahan copy-paste karke naya product add karte jao:
-    // "unique-id": {
-    //     title: "Product Name",
-    //     price: "₹XXX",
-    //     original: "₹XXX",
-    //     image: "image-url",
-    //     badge: "SALE",
-    //     category: "koi-bhi-naam",   // naya bhi chalega!
-    //     desc: "Description",
-    //     link: "affiliate-link"
-    // }
-
-// Optional: category ka pretty display title. Naam nahi doge to
-// automatically "Category Collection" jaisa title ban jaayega.
 const categoryLabels = {
     festive: "Festive Special Sets",
-    stylish: "Stylish Kurti Sets",
-    regular: "Womens Regular Sets"
+    stylish: "Stylish Kurti Sets"
 };
 
 // ==========================================================
-// ⚙️ AUTOMATIC RENDERING ENGINE — isse neeche kuch bhi touch mat karna.
+// ⚙️ AUTOMATIC ENGINE — isse touch karne ki zaroorat nahi
 // ==========================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadProducts();
-    checkUrlForProduct();
+    fetchProductsFromSheet();
 });
 
-function checkUrlForProduct() {
-    const hash = window.location.hash.replace('#', '');
-    if (hash && productsData[hash]) {
-        showDetail(hash);
-    }
+function fetchProductsFromSheet() {
+    const container = document.getElementById("sections-container");
+    if (container) container.innerHTML = "<p style='padding:20px;text-align:center;color:#999;'>Loading products...</p>";
+
+    Papa.parse(SHEET_CSV_URL, {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+            productsData = {};
+            results.data.forEach(row => {
+                if (!row.id) return;
+                productsData[row.id.trim()] = {
+                    title: row.title || "",
+                    price: row.price || "",
+                    original: row.original || "",
+                    image: row.image || "",
+                    badge: row.badge || "",
+                    category: row.category ? row.category.trim() : "",
+                    desc: row.desc || "",
+                    link: row.link || "#"
+                };
+            });
+            loadProducts();
+            checkUrlForProduct();
+        },
+        error: function(err) {
+            console.error("Sheet load error:", err);
+            if (container) container.innerHTML = "<p style='padding:20px;text-align:center;color:red;'>Products load nahi ho paaye. Sheet link check karo.</p>";
+        }
+    });
 }
 
 function loadProducts() {
@@ -144,7 +60,7 @@ function loadProducts() {
     const grouped = {};
     for (let id in productsData) {
         const p = productsData[id];
-        if (!p.category) continue; // banner-special jaise no-category items skip
+        if (!p.category) continue;
         if (!grouped[p.category]) grouped[p.category] = [];
         grouped[p.category].push({ id, ...p });
     }
@@ -197,11 +113,36 @@ function createCard(p) {
     return card;
 }
 
+function loadRelatedProducts(currentId, category) {
+    const relatedSlider = document.getElementById('related-slider');
+    if (!relatedSlider) return;
+
+    relatedSlider.innerHTML = '';
+
+    for (let id in productsData) {
+        const p = productsData[id];
+        if (id === currentId) continue;
+        if (p.category !== category) continue;
+
+        const card = createCard({ id, ...p });
+        relatedSlider.appendChild(card);
+    }
+}
+
+function checkUrlForProduct() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && productsData[hash]) {
+        showDetail(hash);
+    }
+}
+
 function showDetail(productId) {
     const product = productsData[productId];
     if (!product) return;
-    
-    document.getElementById('detail-img-bg').style.backgroundImage = `url('${product.image}')`; 
+
+    const bgEl = document.getElementById('detail-img-bg');
+    if (bgEl) bgEl.style.backgroundImage = `url('${product.image}')`;
+
     document.getElementById('detail-img').src = product.image;
     document.getElementById('detail-title').innerText = product.title;
     document.getElementById('detail-price').innerText = product.price;
@@ -215,22 +156,8 @@ function showDetail(productId) {
 
     window.history.pushState({view: 'detail', id: productId}, "", "#" + productId);
     window.scrollTo(0, 0);
-    loadRelatedProducts(productId, product.category); 
-}
-function loadRelatedProducts(currentId, category) {
-    const relatedSlider = document.getElementById('related-slider');
-    if (!relatedSlider) return;
 
-    relatedSlider.innerHTML = '';
-
-    for (let id in productsData) {
-        const p = productsData[id];
-        if (id === currentId) continue;       // khud ko skip karo
-        if (p.category !== category) continue; // sirf same category
-
-        const card = createCard({ id, ...p });
-        relatedSlider.appendChild(card);
-    }
+    loadRelatedProducts(productId, product.category);
 }
 
 function showHome() {
@@ -239,6 +166,7 @@ function showHome() {
     window.scrollTo(0, 0);
     window.history.pushState({view: 'home'}, "", window.location.pathname);
 }
+
 window.addEventListener('popstate', function(event) {
     const hash = window.location.hash.replace('#', '');
     if (hash && productsData[hash]) {
