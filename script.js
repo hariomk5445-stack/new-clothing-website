@@ -67,7 +67,8 @@ function loadProducts() {
 
     Object.keys(grouped).forEach(category => {
         const sectionTitle = categoryLabels[category] || autoTitle(category);
-        const sliderId = `${category}-slider`;
+        const safeId = category.trim().toLowerCase().replace(/\s+/g, '-');
+const sliderId = `${safeId}-slider`;
 
         const section = document.createElement("section");
         section.className = "product-set";
