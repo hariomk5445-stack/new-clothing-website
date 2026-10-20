@@ -151,6 +151,24 @@ function showDetail(productId) {
     document.getElementById('detail-badge').innerText = product.badge;
     document.getElementById('detail-desc').innerText = product.desc;
     document.getElementById('buy-now-btn').href = product.link;
+        // Product view track karo
+    if (typeof gtag === 'function') {
+        gtag('event', 'view_item', {
+            item_id: productId,
+            item_name: product.title,
+            item_category: product.category
+        });
+    }
+
+    // Affiliate button click track karo
+    document.getElementById('buy-now-btn').onclick = function () {
+        if (typeof gtag === 'function') {
+            gtag('event', 'affiliate_click', {
+                item_id: productId,
+                item_name: product.title
+            });
+        }
+    };
 
     document.getElementById('home-view').classList.remove('active');
     document.getElementById('detail-view').classList.add('active');
