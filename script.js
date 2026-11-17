@@ -1,7 +1,7 @@
 // ==========================================================
 // 🟢 SIRF EK JAGAH: apna published Google Sheet CSV link
 // ==========================================================
-const SHEET_CSV_URL = "YAHAN_APNA_PUBLISHED_CSV_LINK_PASTE_KARO";
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQPVV5jDysJKU4ZcvoEBHDggB_5eeeGnJLnlFGOFdy5iHDY65KwbCPmZg4FEVk_43JCVuidorw3Fgpg/pub?output=csv";
 
 let productsData = {};
 let categoryMap = {};   // slug -> asli category naam
